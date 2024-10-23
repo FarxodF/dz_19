@@ -1,0 +1,16 @@
+from task1.models import Buyer, Game
+
+# Создание объектов Buyer
+task1_buyer1 = Buyer.objects.create(name='John Doe', balance=100.00, age=20)
+task1_buyer2 = Buyer.objects.create(name='Jane Smith', balance=150.00, age=17)  # Младше 18 лет
+task1_buyer3 = Buyer.objects.create(name='Alice Johnson', balance=200.00, age=25)
+
+# Создание объектов Game
+task1_game1 = Game.objects.create(title="Adventure Quest", cost=50.00, size=15.00, description="An epic adventure game.", age_limited=True)
+task1_game2 = Game.objects.create(title="City Builders", cost=60.00, size=20.00, description="Build your own city!", age_limited=False)  # Без ограничения по возрасту
+task1_game3 = Game.objects.create(title="Space Racers", cost=70.00, size=10.00, description="Race through space at breakneck speeds.", age_limited=True)
+
+# Связывание игр с покупателями
+task1_buyer1.game_set.set([task1_game1, task1_game2, task1_game3])
+task1_buyer2.game_set.set([task1_game3])
+task1_buyer3.game_set.set([task1_game1, task1_game2])

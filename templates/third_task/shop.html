@@ -1,0 +1,27 @@
+{% extends "third_task/menu.html" %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список игр</title>
+</head>
+<body>
+    <h1>Список игр</h1>
+{% block content %}
+<div id="price-list">
+    <h2>Список игр</h2>
+    <ul>
+        {% for game in games %}
+            <li>
+                {{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }}
+                <button>Купить</button>
+            </li>
+        {% empty %}
+            <li>Нет доступных игр.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+</body>
+</html>
