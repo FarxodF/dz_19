@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Меню{% endblock %}</title>
@@ -25,14 +25,14 @@
 </head>
 <body>
 <header>
-    <h1>Магазин </h1>
+    <h1>Магазин ToHa.ru</h1>
     <nav>
         <ul>
             {% block menu %}
             <li><a href="{% url 'sign_up' %}">Регистрация</a></li>
-            <li><a href="{% url 'index' %}">Главная</a></li>
-            <li><a href="{% url 'shop' %}">Магазин</a></li>
-            <li><a href="{% url 'cart' %}">Корзина</a></li>
+            <li><a href="{% url 'main_page' %}">Главная</a></li>
+            <li><a href="{% url 'price_page' %}">Магазин</a></li>
+            <li><a href="{% url 'cart_page' %}">Корзина</a></li>
             {% endblock %}
         </ul>
     </nav>
@@ -45,7 +45,7 @@
 </div>
 
 <footer>
-    <p>© 2024 </p>
+    <p>© 2024 Мой магазин</p>
 </footer>
 </body>
 </html>
